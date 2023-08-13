@@ -1,0 +1,23 @@
+.top-img{
+    background: #000;
+    width: 100%;
+}
+.top-img img{
+    width: 100%;
+}
+
+.box{
+    background: #FFCC8D;
+    padding: 3rem;
+    border-radius: 10px;
+}
+.box .tital{
+    display: flex;
+    flex-direction: column;
+    gap: -1rem;
+}
+.box button{
+    width: inherit;
+    background: #000;
+    border-radius: 10px;
+}

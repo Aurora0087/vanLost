@@ -1,33 +1,55 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter, Routes,Route, Link } from 'react-router-dom'
 import './App.css'
+import vanlogo from './assets/VANLIFE.svg'
+import Home from './container/Home';
+import About from './container/About';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedLink, setSelectedLink] = useState("");
+
+    const handleLinkClick = (link: string) => {
+      setSelectedLink(link);
+    };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <BrowserRouter>
+      <div className="container">
+            <header>
+                <Link to={"/"}
+                aria-selected={selectedLink === "/" ? 'true' : 'false'}
+                  onClick={() => handleLinkClick("/")}
+                >
+                    <div className="logo">
+                        <img src={vanlogo} alt="#VANELIFE" />
+                    </div>
+                </Link>
+                <nav>
+                    <Link to={"/about"}
+                    aria-selected={selectedLink === "about" ? 'true' : 'false'}
+                    onClick={() => handleLinkClick("about")}
+                    >
+                      About</Link>
+                    <Link to={"/vans"}
+                    aria-selected={selectedLink === "vans" ? 'true' : 'false'}
+                    onClick={() => handleLinkClick("vans")}
+                    >
+                      Vans
+                    </Link>
+                </nav>
+            </header>
+            <main>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />}/>
+            </Routes>
+            </main>
+            <footer>
+                <p>&#169; 2023#VANLIFE</p>
+            </footer>
+        </div>
+      </BrowserRouter>
     </>
   )
 }
