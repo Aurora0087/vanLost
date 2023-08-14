@@ -11,14 +11,14 @@ function Vans() {
     }, [])
     
     const vanElement = vans.map(van => (
-        <div key={van.id} className="van-title">
-            <Link to={"/vans/"+ van.id}>
-            <img src={van.imageUrl} alt="" />
+        <div key={van['id']} className="van-title">
+            <Link to={"/vans/"+ van['id']}>
+            <img src={van['imageUrl']} alt="" />
             <div className="van-info">
-                <h2>{van.name}</h2>
-                <p>${van.price}<span>/day</span></p>
+                <h2>{van['name']}</h2>
+                <p>${van['price']}<span>/day</span></p>
             </div>
-            <i className={`van-type ${van.type} selected`}>{van.type}</i>
+            <i className={`van-type ${van['type']} selected`}>{van['type']}</i>
             </Link >
         </div>
     ))
