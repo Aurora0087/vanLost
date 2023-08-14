@@ -4,6 +4,10 @@ import './App.css'
 import vanlogo from './assets/VANLIFE.svg'
 import Home from './container/Home';
 import About from './container/About';
+import Vans from './container/Vans';
+import VansDit from './container/VansDit';
+
+import "./server"
 
 function App() {
   const [selectedLink, setSelectedLink] = useState("");
@@ -40,9 +44,11 @@ function App() {
                 </nav>
             </header>
             <main>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />}/>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/vans' element={<Vans />} />
+              <Route path='/vans/:id' element={<VansDit />}/>
             </Routes>
             </main>
             <footer>

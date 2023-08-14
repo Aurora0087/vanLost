@@ -3,14 +3,14 @@
   margin: 0;
   text-align: center;
 }
+
 .container{
   width: 100%;
-  min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
 header{
-  background: #ffffff;
+  background: #FFF7ED;
   display: grid;
   place-items: center;
   grid-template-columns: auto auto;
@@ -19,9 +19,11 @@ header{
   justify-content: space-between;
   width: 100%;
 }
+header nav{
+  margin-right: 2rem;
+}
 a{
   position: relative;
-  margin: .5rem 2rem;
   padding: 0 .5rem;
   font-weight: 800;
   text-decoration: none;
@@ -53,6 +55,7 @@ nav a:hover::after{
   padding: .5rem 1rem;
 }
 main{
+  width: 100%;
   text-align: left;
   display: grid;
   place-items: center;

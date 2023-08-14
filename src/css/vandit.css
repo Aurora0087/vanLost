@@ -1,0 +1,32 @@
+.van{
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.back a:hover{
+    color: #000;
+}
+.van-dit{
+    padding: 0 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.van-dit img{
+    max-width: 80%;
+    border-radius: 10px;
+}
+.van-dit button{
+    width: 100%;
+    padding: .5rem 1rem;
+    background: #d54d17;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    transition: all .2s ease-in-out;
+}
+.van-dit button:hover{
+    background: #29cc55;
+}
